@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · La caja de Florence</title>
+  <meta name="description" content="Expansión transmedia interactiva del universo de Her Story: Sarah abre la caja de Florence. Obra de Milagros Fernandez, CC BY-SA 4.0.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="tracking" aria-hidden="true"></div>
+  <div class="osd osd-arriba" aria-hidden="true"><span>▶ PLAY</span><span>SP <span id="timecode">00:00:00</span></span></div>
+  <div class="osd osd-abajo" aria-hidden="true"><span class="rec">REC</span><span>CH 01</span></div>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html">La caja de Florence</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="caja.html" data-cinta="caja.html">Caja</a>
+      <a href="espejo.html" data-cinta="espejo.html">Espejo</a>
+      <a href="silencio.html" data-cinta="silencio.html">Silencio</a>
+      <a href="eve.html" data-cinta="eve.html">Eve</a>
+      <a href="direccion.html" data-cinta="direccion.html">Dirección</a>
+      <a href="linea-de-tiempo.html" data-cinta="linea-de-tiempo.html">Tiempo</a>
+      <a href="redes.html">Redes</a>
+      <a href="creditos.html">Créditos</a>
+    </nav>
+    <div class="estado">
+      <span class="contador" id="contador" hidden>Cintas vistas: <b id="vistas">0</b> de 6</span>
+      <button type="button" id="fx" aria-pressed="true">Efectos: sí</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <p class="canal">Canal 1 · Inicio</p>
+    <h1 class="titulo-grande">La caja<br>de Florence</h1>
+    <p class="subtitulo">Cinta 1972 · Expansión transmedia</p>
+    <p class="aviso"><span aria-hidden="true">⚠</span> Contiene spoilers de <em>Her Story</em>: jugalo antes. Obra de fans, no oficial.</p>
+    <p>Sarah encuentra una caja con fotos, cartas y cintas VHS sin identificar. Un relato interactivo con tres finales posibles.</p>
+    <ul class="personajes">
+      <li><strong>Sarah:</strong> revisa los recuerdos de su familia y abre la caja.</li>
+      <li><strong>Eve:</strong> está cerca de Sarah y puede saber más de lo que dice.</li>
+      <li><strong>Hannah y Florence:</strong> las mujeres de las cintas de 1972.</li>
+    </ul>
+    <p class="centro"><a class="boton grande" href="caja.html">▶ Abrir la caja</a></p>
+    <div class="pasos"><a class="boton sigue" href="caja.html">Sigue: La caja ▶</a></div>
+  </main>
+
+  <footer class="pie"><p class="nota">Obra de fans, no oficial · © 2026 Milagros Fernandez · <a href="creditos.html#licencia">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redes · La caja de Florence</title>
+  <meta name="description" content="Llamado a la acción, hashtag y calendario de cinco publicaciones.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="tracking" aria-hidden="true"></div>
+  <div class="osd osd-arriba" aria-hidden="true"><span>▶ PLAY</span><span>SP <span id="timecode">00:00:00</span></span></div>
+  <div class="osd osd-abajo" aria-hidden="true"><span class="rec">REC</span><span>CH 08</span></div>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html">La caja de Florence</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="caja.html" data-cinta="caja.html">Caja</a>
+      <a href="espejo.html" data-cinta="espejo.html">Espejo</a>
+      <a href="silencio.html" data-cinta="silencio.html">Silencio</a>
+      <a href="eve.html" data-cinta="eve.html">Eve</a>
+      <a href="direccion.html" data-cinta="direccion.html">Dirección</a>
+      <a href="linea-de-tiempo.html" data-cinta="linea-de-tiempo.html">Tiempo</a>
+      <a href="redes.html" aria-current="page">Redes</a>
+      <a href="creditos.html">Créditos</a>
+    </nav>
+    <div class="estado">
+      <span class="contador" id="contador" hidden>Cintas vistas: <b id="vistas">0</b> de 6</span>
+      <button type="button" id="fx" aria-pressed="true">Efectos: sí</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <p class="canal">Canal 8 · Redes</p>
+    <h1>Seguí la historia</h1>
+    <p><strong>Llamado a la acción:</strong> jugá la caja y contanos en los comentarios qué final elegiste.</p>
+    <p class="hashtag" aria-label="Hashtag">#LaCajaDeFlorence</p>
+    <h2 class="chico">Calendario de ejemplo</h2>
+    <ol class="calendario">
+      <li><span class="dia">Lun</span><span>Teaser: la caja cerrada, 5 segundos.</span></li>
+      <li><span class="dia">Mar</span><span>Cinta del espejo cubierto, con la pregunta «¿qué hay debajo?».</span></li>
+      <li><span class="dia">Mié</span><span>Encuesta en historias: silencio, Eve o dirección.</span></li>
+      <li><span class="dia">Jue</span><span>Cinta del final más votado.</span></li>
+      <li><span class="dia">Vie</span><span>Resumen de votos y repost de lo que subió la gente.</span></li>
+    </ol>
+    <div class="pasos"><a class="boton atras" href="linea-de-tiempo.html">◀ Anterior: Línea de tiempo</a><a class="boton sigue" href="creditos.html">Sigue: Créditos ▶</a></div>
+  </main>
+
+  <footer class="pie"><p class="nota">Obra de fans, no oficial · © 2026 Milagros Fernandez · <a href="creditos.html#licencia">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>

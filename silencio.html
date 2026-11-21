@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camino del silencio · La caja de Florence</title>
+  <meta name="description" content="Final en que Sarah guarda silencio y deja la caja cerrada una semana.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="tracking" aria-hidden="true"></div>
+  <div class="osd osd-arriba" aria-hidden="true"><span>▶ PLAY</span><span>SP <span id="timecode">00:00:00</span></span></div>
+  <div class="osd osd-abajo" aria-hidden="true"><span class="rec">REC</span><span>CH 04</span></div>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html">La caja de Florence</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="caja.html" data-cinta="caja.html">Caja</a>
+      <a href="espejo.html" data-cinta="espejo.html">Espejo</a>
+      <a href="silencio.html" aria-current="page" data-cinta="silencio.html">Silencio</a>
+      <a href="eve.html" data-cinta="eve.html">Eve</a>
+      <a href="direccion.html" data-cinta="direccion.html">Dirección</a>
+      <a href="linea-de-tiempo.html" data-cinta="linea-de-tiempo.html">Tiempo</a>
+      <a href="redes.html">Redes</a>
+      <a href="creditos.html">Créditos</a>
+    </nav>
+    <div class="estado">
+      <span class="contador" id="contador" hidden>Cintas vistas: <b id="vistas">0</b> de 6</span>
+      <button type="button" id="fx" aria-pressed="true">Efectos: sí</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <p class="canal">Canal 4 · Final 1</p>
+    <h1>Una semana después</h1>
+    <p class="etiqueta"><span class="play" aria-hidden="true">▶</span> Si Sarah guardó silencio</p>
+    <div class="tele">
+      <div class="pantalla">
+        <video controls preload="none" playsinline poster="img/poster-silencio.jpg" aria-describedby="txt-silencio">
+          <source src="video/silencio.mp4" type="video/mp4">
+          <a href="video/silencio.mp4">Abrir el video (MP4, 0.8 MB)</a>
+        </video>
+      </div>
+      <p class="perillas"><span class="luz">● ENCENDIDO</span><a href="video/silencio.mp4">Abrir el archivo del video</a></p>
+    </div>
+    <p id="txt-silencio" class="relato"><strong>Lo que pasa en el video.</strong> Sarah cierra la caja y la guarda en el armario. En el video solo se ve el cartón, muy de cerca, con una flecha de «frágil» y la imagen temblando como una cinta gastada. Se oyen roces y ruido de fondo, nadie habla. Pasa una semana. Eve pregunta si encontró algo y Sarah dice que no. Una noche saca una cinta, la sostiene un rato sin ponerla y la vuelve a guardar. Lo que no se mira se queda esperando.</p>
+    <h2 class="chico">Probá otro camino</h2>
+    <ul class="lista-botones"><li><a class="boton" href="eve.html">Probar: hablar con Eve</a></li><li><a class="boton" href="direccion.html">Probar: salir con la foto</a></li></ul>
+    <p><a class="enlace-tiempo" href="linea-de-tiempo.html">Ver la línea de tiempo ▶</a></p>
+    <div class="pasos"><a class="boton atras" href="espejo.html">◀ Anterior: El espejo cubierto</a><a class="boton sigue" href="eve.html">Sigue: Camino de Eve ▶</a></div>
+  </main>
+
+  <footer class="pie"><p class="nota">Obra de fans, no oficial · © 2026 Milagros Fernandez · <a href="creditos.html#licencia">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>

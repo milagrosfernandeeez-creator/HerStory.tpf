@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Línea de tiempo · La caja de Florence</title>
+  <meta name="description" content="Línea de tiempo: qué es del juego original y qué es de esta historia.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="tracking" aria-hidden="true"></div>
+  <div class="osd osd-arriba" aria-hidden="true"><span>▶ PLAY</span><span>SP <span id="timecode">00:00:00</span></span></div>
+  <div class="osd osd-abajo" aria-hidden="true"><span class="rec">REC</span><span>CH 07</span></div>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html">La caja de Florence</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="caja.html" data-cinta="caja.html">Caja</a>
+      <a href="espejo.html" data-cinta="espejo.html">Espejo</a>
+      <a href="silencio.html" data-cinta="silencio.html">Silencio</a>
+      <a href="eve.html" data-cinta="eve.html">Eve</a>
+      <a href="direccion.html" data-cinta="direccion.html">Dirección</a>
+      <a href="linea-de-tiempo.html" aria-current="page" data-cinta="linea-de-tiempo.html">Tiempo</a>
+      <a href="redes.html">Redes</a>
+      <a href="creditos.html">Créditos</a>
+    </nav>
+    <div class="estado">
+      <span class="contador" id="contador" hidden>Cintas vistas: <b id="vistas">0</b> de 6</span>
+      <button type="button" id="fx" aria-pressed="true">Efectos: sí</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <p class="canal">Canal 7 · Línea de tiempo</p>
+    <h1>De 1972 a la caja</h1>
+    <p class="nota">Tocá cada cinta. La etiqueta dice si el hito es del juego original o de esta historia.</p>
+    <ol class="linea">
+      <li><details class="cinta"><summary><span class="play" aria-hidden="true"></span><span class="num">1972</span><span class="chip chip-nuevo">Esta historia</span><span class="titulo">La cinta y la carta</span></summary>
+        <div class="cuerpo"><p>Florence graba a dos niñas jugando y escribe una carta que nunca llega a destino.</p></div></details></li>
+      <li><details class="cinta"><summary><span class="play" aria-hidden="true"></span><span class="num">1994</span><span class="chip chip-marco">Juego original</span><span class="titulo">Las entrevistas</span></summary>
+        <div class="cuerpo"><p>Desaparece Simon y se hacen las siete entrevistas policiales. Esta historia no cuenta nada de eso.</p></div></details></li>
+      <li><details class="cinta"><summary><span class="play" aria-hidden="true"></span><span class="num">Hoy</span><span class="chip chip-nuevo">Esta historia</span><span class="titulo">Sarah revisa las grabaciones</span></summary>
+        <div class="cuerpo"><p>Sarah pasa días mirando las entrevistas a su madre y le quedan preguntas.</p></div></details></li>
+      <li><details class="cinta"><summary><span class="play" aria-hidden="true"></span><span class="num">Hoy</span><span class="chip chip-nuevo">Esta historia</span><span class="titulo">La caja de Florence</span></summary>
+        <div class="cuerpo"><p>Sarah encuentra la caja con fotos, cartas y cintas. Una etiqueta dice 1972. Desde acá el relato se bifurca.</p></div></details></li>
+    </ol>
+    <div class="pasos"><a class="boton atras" href="direccion.html">◀ Anterior: Camino de la dirección</a><a class="boton sigue" href="redes.html">Sigue: Redes ▶</a></div>
+  </main>
+
+  <footer class="pie"><p class="nota">Obra de fans, no oficial · © 2026 Milagros Fernandez · <a href="creditos.html#licencia">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>

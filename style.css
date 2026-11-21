@@ -1,0 +1,152 @@
+/* La caja de Florence — estética VHS · Milagros Fernandez · CC BY-SA 4.0 */
+:root{
+  --negro:#120e0b; --papel:#eadfc2; --papel-oscuro:#cdbf9c; --tinta:#2b1f16;
+  --rojo:#c8402f; --rojo-vhs:rgba(255,40,70,.65); --cian-vhs:rgba(0,240,255,.55);
+  --ambar:#f2b441; --texto:#efe6cf; --suave:#c4b79b;
+  --fuente:"Courier New",Courier,ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:100%}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at center,#2d231b 0%,var(--negro) 75%) fixed;
+  color:var(--texto);font-family:var(--fuente);font-size:1rem;line-height:1.6;
+  text-shadow:.6px 0 rgba(255,40,70,.35),-.6px 0 rgba(0,240,255,.3)}
+a{color:var(--ambar)}
+a:visited{color:#d9a0c4}
+a:focus-visible,button:focus-visible,summary:focus-visible,video:focus-visible{outline:3px solid var(--ambar);outline-offset:3px}
+.salto{position:absolute;left:-999px;top:0;z-index:100;background:var(--ambar);color:#000;padding:.75rem 1rem;text-shadow:none}
+.salto:focus{left:0}
+
+/* ---- capas VHS (sólo con efectos activados) ---- */
+html:not(.fx-off) body::before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0) 2px,rgba(0,0,0,.2) 3px,rgba(0,0,0,0) 4px);mix-blend-mode:multiply}
+html:not(.fx-off) body::after{content:"";position:fixed;inset:0;z-index:51;pointer-events:none;opacity:.14;
+  background-image:radial-gradient(ellipse at center,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%),
+  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation:grano .6s steps(4) infinite}
+@keyframes grano{0%{background-position:0 0,0 0}25%{background-position:0 0,-30px 20px}50%{background-position:0 0,25px -35px}75%{background-position:0 0,-15px -10px}100%{background-position:0 0,10px 30px}}
+.tracking{position:fixed;left:0;right:0;height:90px;z-index:49;pointer-events:none;display:none;
+  background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.07),rgba(255,255,255,0));animation:tracking 9s linear infinite}
+html:not(.fx-off) .tracking{display:block}
+@keyframes tracking{from{top:110%}to{top:-120px}}
+html:not(.fx-off) main{animation:flicker 5s infinite}
+@keyframes flicker{0%,97%,100%{opacity:1}98%{opacity:.93}99%{opacity:1}}
+
+.osd{position:fixed;left:0;right:0;z-index:60;pointer-events:none;display:flex;justify-content:space-between;
+  padding:.4rem 1rem;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:2px 0 var(--rojo-vhs),-2px 0 var(--cian-vhs)}
+.osd-arriba{top:0;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,0))}
+.osd-abajo{bottom:0;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.65))}
+.rec::before{content:"● ";color:#ff3b30}
+html:not(.fx-off) .rec::before{animation:parpadeo 1.2s steps(2) infinite}
+@keyframes parpadeo{50%{opacity:0}}
+
+/* ---- cabecera y menú ---- */
+.cabecera{padding:2.4rem 1rem .8rem;border-bottom:2px dashed var(--papel-oscuro);max-width:54rem;margin:0 auto}
+.marca{display:inline-flex;align-items:center;min-height:44px;color:var(--papel);text-decoration:none;font-weight:bold;
+  text-transform:uppercase;letter-spacing:.1em;text-shadow:2px 0 var(--rojo-vhs),-2px 0 var(--cian-vhs)}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.3rem 0 .8rem}
+.menu a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:.3rem .4rem;text-align:center;
+  border:1px solid var(--papel-oscuro);border-radius:3px;text-decoration:none;color:var(--papel);
+  font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;transition:background .06s,transform .06s}
+.menu a:hover{background:var(--papel);color:var(--tinta);text-shadow:none}
+.menu a:active{transform:translate(2px,2px)}
+.menu a:visited{color:var(--papel)}
+.menu a[aria-current="page"]{background:var(--ambar);color:var(--tinta);border-color:var(--ambar);font-weight:bold;text-shadow:none;box-shadow:inset 0 -4px 0 var(--rojo)}
+.menu a.vista:not([aria-current]){border-color:var(--ambar)}
+.estado{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between}
+.contador{color:var(--ambar);font-size:.95rem}
+
+/* ---- contenido ---- */
+main{max-width:54rem;margin:0 auto;padding:1rem 1rem 5rem}
+h1{margin:.2rem 0 .8rem;font-size:1.7rem;line-height:1.15;text-transform:uppercase;letter-spacing:.06em;color:var(--papel);
+  text-shadow:3px 0 var(--rojo-vhs),-3px 0 var(--cian-vhs)}
+h1.titulo-grande{font-size:clamp(2.1rem,10vw,3.8rem);text-align:center;margin-top:1rem}
+html:not(.fx-off) h1.titulo-grande{animation:glitch 6s infinite}
+@keyframes glitch{0%,92%,100%{transform:none}93%{transform:translate(-4px,0)}94%{transform:translate(5px,0)}95%{transform:translate(-2px,0)}}
+h2.chico{font-size:1.15rem;text-transform:uppercase;letter-spacing:.08em;color:var(--papel);border-bottom:2px solid var(--rojo);padding-bottom:.3rem;margin-top:1.8rem}
+.canal{color:var(--ambar);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;margin:.5rem 0 0}
+.subtitulo{color:var(--ambar);letter-spacing:.2em;text-transform:uppercase;text-align:center;margin:0}
+.nota{color:var(--suave)}
+.aviso{border:2px dashed var(--ambar);padding:.7rem 1rem;color:var(--papel)}
+.centro{text-align:center;margin:1.6rem 0}
+.personajes{padding-left:1.2rem}
+.personajes li{margin:.4rem 0}
+.hashtag{font-size:1.5rem;font-weight:bold;color:var(--ambar);text-align:center;border:2px dashed var(--papel-oscuro);padding:.7rem;overflow-wrap:anywhere}
+.tarjeta{background:rgba(42,32,26,.85);border:1px solid var(--papel-oscuro);border-radius:6px;padding:1rem;margin:1.2rem 0}
+.lista-creditos{padding-left:1.2rem}
+.lista-creditos li{margin:.5rem 0}
+
+/* ---- televisor (video y H5P) ---- */
+.tele{background:#3a2c22;border:4px solid #1b130d;border-radius:18px;padding:.7rem .7rem 1rem;margin:1rem 0;
+  box-shadow:0 0 0 3px #5a4636,0 10px 30px rgba(0,0,0,.7),inset 0 0 18px rgba(0,0,0,.6)}
+.pantalla{background:#000;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 40px rgba(0,0,0,.9),0 0 0 2px #0a0705}
+.pantalla iframe{display:block;width:100%;border:0;min-height:300px}
+.pantalla video{display:block;width:100%;height:auto;aspect-ratio:848/478;background:#000}
+.perillas{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.4rem;margin:.6rem 0 0;font-size:.9rem}
+.luz{font-size:.8rem;letter-spacing:.15em;color:var(--ambar)}
+.perillas a{display:inline-flex;align-items:center;min-height:44px}
+
+/* ---- etiqueta VHS ---- */
+.etiqueta{display:flex;align-items:center;gap:.6rem;min-height:44px;margin:.3rem 0;padding:.4rem .9rem .4rem 1.3rem;position:relative;
+  background:var(--papel);color:var(--tinta);text-shadow:none;border:2px solid #1b130d;border-radius:4px;box-shadow:4px 4px 0 #000;font-weight:bold;text-transform:uppercase}
+.etiqueta::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--rojo)}
+.etiqueta .play{color:var(--rojo);min-width:1.2em}
+.relato{background:rgba(0,0,0,.55);border-left:4px solid var(--rojo);padding:.9rem 1rem;margin:1rem 0}
+
+/* ---- botones y enlaces grandes ---- */
+.boton,button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:.55rem 1rem;
+  font:inherit;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;cursor:pointer;
+  background:var(--papel);color:var(--tinta);border:2px solid #000;border-radius:3px;text-shadow:none;box-shadow:3px 3px 0 #000;
+  transition:transform .05s,box-shadow .05s,background .05s}
+.boton:visited{color:var(--tinta);background:var(--papel-oscuro)}
+.boton:hover,button:hover{background:#fff6dc}
+.boton:active,button:active{transform:translate(3px,3px);box-shadow:0 0 0 #000}
+.boton.grande{font-size:1.25rem;padding:.8rem 1.4rem;background:var(--ambar)}
+.lista-botones{list-style:none;padding:0;margin:.8rem 0;display:grid;gap:.8rem}
+.lista-botones .boton{width:100%;justify-content:flex-start;text-align:left}
+.enlace-tiempo{display:inline-flex;align-items:center;min-height:44px}
+.pasos{display:grid;gap:.8rem;margin-top:2rem;padding-top:1.2rem;border-top:2px dashed var(--papel-oscuro)}
+.pasos .boton{justify-content:center;text-align:center}
+.pasos .sigue{background:var(--ambar)}
+.pasos .sigue:visited{background:#d9a24a}
+
+/* ---- cintas desplegables (línea de tiempo) ---- */
+.linea{list-style:none;margin:1rem 0 0;padding:0}
+.linea li{margin:0 0 1rem}
+.cinta summary{list-style:none;cursor:pointer;min-height:44px;position:relative;display:block;
+  background:var(--papel);color:var(--tinta);text-shadow:none;border:2px solid #1b130d;border-radius:4px;
+  padding:.7rem .9rem .7rem 1.3rem;box-shadow:4px 4px 0 #000;transition:transform .05s,box-shadow .05s}
+.cinta summary::-webkit-details-marker{display:none}
+.cinta summary::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--rojo)}
+.cinta summary:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #000}
+.cinta summary .num{display:inline-block;font-size:.8rem;letter-spacing:.2em;color:#5d4a33;text-transform:uppercase;margin-right:.5rem}
+.cinta summary .titulo{display:block;font-weight:bold;font-size:1.05rem;text-transform:uppercase;margin-top:.2rem}
+.cinta summary .play{float:right;font-weight:bold;color:var(--rojo);min-width:1.5em;text-align:right}
+.cinta:not([open]) summary .play::after{content:"▶"}
+.cinta[open] summary .play::after{content:"■"}
+.cinta .cuerpo{margin-top:.6rem;padding:1rem;background:rgba(0,0,0,.55);border-left:4px solid var(--rojo)}
+.cinta .cuerpo p{margin:0}
+html:not(.fx-off) .cinta[open] .cuerpo{animation:estatica .5s steps(5)}
+@keyframes estatica{0%{filter:contrast(3) brightness(1.8) blur(1px);opacity:.3}60%{filter:contrast(1.5) brightness(1.2);opacity:.8}100%{filter:none;opacity:1}}
+.chip{display:inline-block;padding:.05rem .5rem;border:1px solid;border-radius:999px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;font-weight:normal}
+.chip-marco{color:#4a3a28;border-color:#4a3a28;background:transparent}
+.chip-nuevo{color:#fff;background:var(--rojo);border-color:var(--rojo)}
+
+/* ---- calendario de redes ---- */
+.calendario{list-style:none;padding:0;margin:.8rem 0;display:grid;gap:.6rem}
+.calendario li{display:flex;gap:.8rem;align-items:flex-start;background:rgba(42,32,26,.85);border:1px solid var(--papel-oscuro);border-radius:6px;padding:.6rem .8rem}
+.dia{flex:none;min-width:3.2rem;text-align:center;background:var(--papel);color:var(--tinta);font-weight:bold;text-transform:uppercase;text-shadow:none;padding:.1rem .3rem;border-radius:2px}
+
+.pie a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.pie{border-top:2px dashed var(--papel-oscuro);padding:1.5rem 1rem 4rem;text-align:center}
+
+/* ---- pantallas más grandes ---- */
+@media (min-width:600px){
+  .menu{grid-template-columns:repeat(9,auto);justify-content:center}
+  .menu a{padding:.3rem .6rem;font-size:.85rem}
+  .pasos{grid-template-columns:1fr 1fr}
+  .lista-botones{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:600px) and (max-width:860px){ .menu{grid-template-columns:repeat(5,1fr)} }
+
+/* ---- sin movimiento ---- */
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }

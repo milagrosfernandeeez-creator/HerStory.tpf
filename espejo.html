@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El espejo cubierto · La caja de Florence</title>
+  <meta name="description" content="Cinta del espejo cubierto: una tela negra, una mano y nada más.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="tracking" aria-hidden="true"></div>
+  <div class="osd osd-arriba" aria-hidden="true"><span>▶ PLAY</span><span>SP <span id="timecode">00:00:00</span></span></div>
+  <div class="osd osd-abajo" aria-hidden="true"><span class="rec">REC</span><span>CH 03</span></div>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html">La caja de Florence</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="caja.html" data-cinta="caja.html">Caja</a>
+      <a href="espejo.html" aria-current="page" data-cinta="espejo.html">Espejo</a>
+      <a href="silencio.html" data-cinta="silencio.html">Silencio</a>
+      <a href="eve.html" data-cinta="eve.html">Eve</a>
+      <a href="direccion.html" data-cinta="direccion.html">Dirección</a>
+      <a href="linea-de-tiempo.html" data-cinta="linea-de-tiempo.html">Tiempo</a>
+      <a href="redes.html">Redes</a>
+      <a href="creditos.html">Créditos</a>
+    </nav>
+    <div class="estado">
+      <span class="contador" id="contador" hidden>Cintas vistas: <b id="vistas">0</b> de 6</span>
+      <button type="button" id="fx" aria-pressed="true">Efectos: sí</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <p class="canal">Canal 3 · Cinta 02 · sin etiqueta</p>
+    <h1>El espejo cubierto</h1>
+    <p class="etiqueta"><span class="play" aria-hidden="true">▶</span> Cinta 02 · sin etiqueta</p>
+    <div class="tele">
+      <div class="pantalla">
+        <video controls preload="none" playsinline poster="img/poster-espejo.jpg" aria-describedby="txt-espejo">
+          <source src="video/espejo.mp4" type="video/mp4">
+          <a href="video/espejo.mp4">Abrir el video (MP4, 1.0 MB)</a>
+        </video>
+      </div>
+      <p class="perillas"><span class="luz">● ENCENDIDO</span><a href="video/espejo.mp4">Abrir el archivo del video</a></p>
+    </div>
+    <p id="txt-espejo" class="relato"><strong>Lo que pasa en el video.</strong> En una habitación casi vacía, una tela negra cubre un espejo apoyado contra una pared clara. Una mano entra desde la izquierda y toca la tela, despacio, sin llegar a levantarla. La cámara no se mueve: se ven el contador, el punto rojo de REC y nada más. El sonido es apenas el zumbido de la cinta. Quien grabó esto eligió no mirar, o no pudo.</p>
+    <p class="nota">Esta cinta está en la caja sin importar el final que elijas.</p>
+    <div class="pasos"><a class="boton atras" href="caja.html">◀ Anterior: La caja</a><a class="boton sigue" href="silencio.html">Sigue: Camino del silencio ▶</a></div>
+  </main>
+
+  <footer class="pie"><p class="nota">Obra de fans, no oficial · © 2026 Milagros Fernandez · <a href="creditos.html#licencia">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>

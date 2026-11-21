@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camino de Eve · La caja de Florence</title>
+  <meta name="description" content="Final en que Sarah le muestra la carta de Florence a Eve.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">
+  <script src="script.js"></script>
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <div class="tracking" aria-hidden="true"></div>
+  <div class="osd osd-arriba" aria-hidden="true"><span>▶ PLAY</span><span>SP <span id="timecode">00:00:00</span></span></div>
+  <div class="osd osd-abajo" aria-hidden="true"><span class="rec">REC</span><span>CH 05</span></div>
+
+  <header class="cabecera">
+    <a class="marca" href="index.html">La caja de Florence</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="caja.html" data-cinta="caja.html">Caja</a>
+      <a href="espejo.html" data-cinta="espejo.html">Espejo</a>
+      <a href="silencio.html" data-cinta="silencio.html">Silencio</a>
+      <a href="eve.html" aria-current="page" data-cinta="eve.html">Eve</a>
+      <a href="direccion.html" data-cinta="direccion.html">Dirección</a>
+      <a href="linea-de-tiempo.html" data-cinta="linea-de-tiempo.html">Tiempo</a>
+      <a href="redes.html">Redes</a>
+      <a href="creditos.html">Créditos</a>
+    </nav>
+    <div class="estado">
+      <span class="contador" id="contador" hidden>Cintas vistas: <b id="vistas">0</b> de 6</span>
+      <button type="button" id="fx" aria-pressed="true">Efectos: sí</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <p class="canal">Canal 5 · Final 2</p>
+    <h1>Lo que anotó Sarah</h1>
+    <p class="etiqueta"><span class="play" aria-hidden="true">▶</span> Si Sarah habló con Eve</p>
+    <div class="tele">
+      <div class="pantalla">
+        <video controls preload="none" playsinline poster="img/poster-eve.jpg" aria-describedby="txt-eve">
+          <source src="video/eve.mp4" type="video/mp4">
+          <a href="video/eve.mp4">Abrir el video (MP4, 2.6 MB)</a>
+        </video>
+      </div>
+      <p class="perillas"><span class="luz">● ENCENDIDO</span><a href="video/eve.mp4">Abrir el archivo del video</a></p>
+    </div>
+    <p id="txt-eve" class="relato"><strong>Lo que pasa en el video.</strong> Sarah le muestra a Eve la carta de Florence. En el video se ven manos que sostienen una hoja manuscrita sobre una mesa oscura; la hoja se inclina, se acerca a la cámara y vuelve a bajar. Eve mira la letra y empieza a decir un nombre, pero no lo termina. Cuando Eve se va a dormir, Sarah anota lo que recuerda y deja escritas dos opciones: que fuera memoria o que fuera cansancio.</p>
+    <h2 class="chico">Probá otro camino</h2>
+    <ul class="lista-botones"><li><a class="boton" href="silencio.html">Probar: guardar silencio</a></li><li><a class="boton" href="direccion.html">Probar: salir con la foto</a></li></ul>
+    <p><a class="enlace-tiempo" href="linea-de-tiempo.html">Ver la línea de tiempo ▶</a></p>
+    <div class="pasos"><a class="boton atras" href="silencio.html">◀ Anterior: Camino del silencio</a><a class="boton sigue" href="direccion.html">Sigue: Camino de la dirección ▶</a></div>
+  </main>
+
+  <footer class="pie"><p class="nota">Obra de fans, no oficial · © 2026 Milagros Fernandez · <a href="creditos.html#licencia">CC BY-SA 4.0</a></p></footer>
+</body>
+</html>
